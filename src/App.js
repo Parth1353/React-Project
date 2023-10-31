@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Headers />
+      <Main />
     </div>
   );
 }
 
-export default App;
+function Headers() {
+  return (
+    <div className="top">
+      <h1 className="t-text">Todo-List</h1>
+    </div>
+  );
+}
+
+function Main() {
+  return(
+    <div className='form'>
+      <h1 className='form-text'>Add Task Here</h1>
+      <form className='realform'></form>
+    </div>
+  );
+}
