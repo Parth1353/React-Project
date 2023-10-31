@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   min-height: 100vh;
   background: linear-gradient(
@@ -14,7 +13,6 @@ body {
   background-size: 400% auto;
   animation: gradientAnimation 15s ease infinite;
 }
-
 @keyframes gradientAnimation {
   0% {
     background-position: 0% 50%;
@@ -26,7 +24,6 @@ body {
     background-position: 0% 50%;
   }
 }
-
 .top {
   text-align: center;
   align-items: center;
@@ -36,11 +33,9 @@ body {
   display: flex;
   box-shadow: 0 6px 20px 10px rgba(6, 72, 240, 0.19);
 }
-
 .t-text {
   color: white;
 }
-
 .form {
   display: flex;
   height: 70rem;
@@ -53,22 +48,41 @@ body {
   border-radius: 10px;
   box-shadow: 0 6px 20px 10px rgba(6, 72, 240, 0.19);
 }
-
 .form-text {
   margin-top: 1rem;
   color: white;
   text-align: center;
   margin-bottom: 3rem;
 }
+/* Existing CSS styles... */
 
 input[type="date"]::-webkit-calendar-picker-indicator {
   display: none;
 }
 
+/* Additional style for the date input to show a custom calendar icon */
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  min-width: 250;
+  height: 63.5;
+  cursor: pointer;
+  background: url("https://png.pngtree.com/element_our/20190531/ourmid/pngtree-flat-calendar-image_1287503.jpg")
+    no-repeat; /* Add your calendar icon */
+  background-position: center right; /* Adjust icon position */
+  background-size: 20px;
+  padding-right: 30px;
+  background-color: white;
+  margin-left: 3rem;
+  min-width: 250px;
+  border: 1px solid lightgrey;
+  padding-top: 13px;
+  color: #3951b2;
+}
 .input1 {
   display: flex;
 }
-
 .label-float {
   position: relative;
   padding-top: 13px;
@@ -81,9 +95,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   min-width: 250px;
   padding: 15px 20px;
   font-size: 16px;
-  transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
+  transition: all 0.1s linear;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -webkit-appearance: none;
 }
 
 .label-float input:focus {
@@ -99,9 +114,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   position: absolute;
   top: calc(50% - 8px);
   left: 15px;
-  transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
+  transition: all 0.1s linear;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
   background-color: white;
   padding: 5px;
   box-sizing: border-box;
@@ -110,25 +125,25 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .label-float input:required:invalid + label {
   color: #3951b2;
 }
-
 .label-float input:focus:required:invalid {
   border: 2px solid #3951b2;
 }
-
 .label-float input:focus + label,
 .label-float input:not(:placeholder-shown) + label {
   font-size: 13px;
   top: 0;
   color: red;
-  transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
 }
-
-.button {
+/* .button {
   align-items: center;
   justify-content: center;
-  margin-left: 35%; /* Adjust as needed */
+  margin-left: 46%;
+  margin-top: 3rem;
+} */
+button {
+  align-items: center;
+  justify-content: center;
+  margin-left: 35%;
   margin-top: 3rem;
   background: rgba(186, 3, 62, 1);
   color: #fff;
@@ -142,14 +157,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   transition: 800ms ease all;
   outline: none;
 }
-
-.button:hover {
+button:hover {
   background: #fff;
   color: rgba(0, 212, 255, 1);
 }
-
-.button:before,
-.button:after {
+button:before,
+button:after {
   content: "";
   position: absolute;
   top: 0;
@@ -159,16 +172,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background: rgba(0, 212, 255, 1);
   transition: 400ms ease all;
 }
-
-.button:after {
+button:after {
   right: inherit;
   top: inherit;
   left: 0;
   bottom: 0;
 }
-
-.button:hover:before,
-.button:hover:after {
+button:hover:before,
+button:hover:after {
   width: 100%;
   transition: 800ms ease all;
 }
