@@ -29,8 +29,10 @@ function Main() {
             <label>Task</label>
           </div>
 
-          <input type="date" id="date" />
+          <input type="date" id="date" ></input>
+          
         </div>
+        <button className="button">Submit</button>
       </form>
     </div>
   );
