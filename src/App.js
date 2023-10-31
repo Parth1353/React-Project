@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './App.css';
+import React from "react";
+import "./App.css"; // Ensure that your CSS file path is correct
 
 export default function App() {
   return (
@@ -19,10 +19,19 @@ function Headers() {
 }
 
 function Main() {
-  return(
-    <div className='form'>
-      <h1 className='form-text'>Add Task Here</h1>
-      <form className='realform'></form>
+  return (
+    <div className="form">
+      <form className="realform">
+        <h1 className="form-text">Add Task Here</h1>
+        <div className="input1">
+          <div class="label-float">
+            <input type="text" placeholder=" " required />
+            <label>Task</label>
+          </div>
+
+          <input type="date" id="date" />
+        </div>
+      </form>
     </div>
   );
 }
