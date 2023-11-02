@@ -1,3 +1,4 @@
+//just trying to make it work like global and add hooks concept and sending props
 import React, { useState } from "react";
 import "./index.css";
 const item = [
@@ -13,10 +14,13 @@ const item = [
   },
 ];
 export default function App() {
+  const [description, setDescription] = useState(item);
+  const [date, setDate] = useState("");
   return (
     <div>
       <Headers />
       <Main />
+      <Display/>
     </div>
   );
 }
@@ -29,9 +33,8 @@ function Headers() {
   );
 }
 
-function Main() {
-  const [description, setDescription] = useState("");
-  const [date, setDate] = useState("");
+function Main({description}) {
+ 
   function handleSub(e) {
     e.preventDefault();
     console.log("Task description:", description);
@@ -67,3 +70,4 @@ function Main() {
     </div>
   );
 }
+function Display()
