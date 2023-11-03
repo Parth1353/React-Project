@@ -166,26 +166,26 @@ button:hover:after {
 }
 
 .display-tasks ul {
-  list-style: none; /* Remove default list styles */
+  list-style: none; 
   padding: 0;
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap onto the next line */
+  flex-wrap: wrap; 
   gap: 5px;
-  align-items: center; /* Align items in the center horizontally */
-  justify-content: center; /* Center content horizontally */
-  max-width: calc(100% - 10px); /* Adjust maximum width of the list */
+  align-items: center; 
+  justify-content: center;
+  max-width: calc(100% - 10px);
 }
-
 .display-tasks ul li {
   display: flex;
-  align-items: center; /* Align content in each task vertically */
+  align-items: center; 
   padding: 10px;
   background-color: rgb(123, 91, 91);
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  flex: 1 0 19%; /* Set width for five items in one line */
-  max-width: calc(19% - 10px); /* Adjust maximum width of each item */
+  flex: 1 0 19%; 
+  max-width: calc(19% - 10px); 
   text-align: center;
+  margin-top: 3%;
 }
 
 
