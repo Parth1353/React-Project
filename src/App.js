@@ -1,26 +1,39 @@
-//just trying to make it work like global and add hooks concept and sending props
 import React, { useState } from "react";
 import "./index.css";
+
 const item = [
   {
     id: 1,
     description: "Book a Train Ticket",
-    date:22/12/2023
+    date: "22/12/2023"
   },
   {
     id: 2,
     description: "Book a bus Ticket",
-    date:22/12/2023
+    date: "22/12/2023"
   },
 ];
+
 export default function App() {
-  const [description, setDescription] = useState(item);
+  const [tasks, setTasks] = useState(item);
+  const [description, setDescription] = useState("");
   const [date, setDate] = useState("");
+
+  const addTask = (newTask) => {
+    setTasks([...tasks, newTask]);
+  };
+
   return (
     <div>
       <Headers />
-      <Main />
-      <Display/>
+      <Main
+        description={description}
+        setDescription={setDescription}
+        date={date}
+        setDate={setDate}
+        addTask={addTask}
+      />
+      <Display tasks={tasks} />
     </div>
   );
 }
@@ -33,13 +46,16 @@ function Headers() {
   );
 }
 
-function Main({description}) {
- 
+function Main({ description, setDescription, date, setDate, addTask }) {
   function handleSub(e) {
     e.preventDefault();
     console.log("Task description:", description);
     console.log("Task date:", date);
-    setDescription("");
+    if (description !== "") {
+      addTask({ id: Date.now(), description, date });
+      setDescription("");
+      setDate("");
+    }
   }
 
   return (
@@ -60,6 +76,7 @@ function Main({description}) {
           <input
             type="date"
             id="date"
+            value={date}
             onChange={(e) => setDate(e.target.value)}
           ></input>
         </div>
@@ -70,4 +87,18 @@ function Main({description}) {
     </div>
   );
 }
-function Display()
+
+function Display({ tasks }) {
+  return (
+    <div className="display-tasks">
+      <h2>Tasks:</h2>
+      <ul>
+        {tasks.map((task) => (
+          <li key={task.id}>
+            {task.description} - {task.date}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
