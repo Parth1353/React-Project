@@ -38,7 +38,7 @@ body {
 }
 .form {
   display: flex;
-  height: 70rem;
+  height: 20rem;
   width: 70rem;
   margin-left: 10%;
   margin-right: 10%;
@@ -54,35 +54,15 @@ body {
   text-align: center;
   margin-bottom: 3rem;
 }
-/* Existing CSS styles... */
 
 input[type="date"]::-webkit-calendar-picker-indicator {
   display: none;
 }
 
-/* Additional style for the date input to show a custom calendar icon */
-input[type="date"] {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  min-width: 250;
-  height: 63.5;
-  cursor: pointer;
-  background: url("https://png.pngtree.com/element_our/20190531/ourmid/pngtree-flat-calendar-image_1287503.jpg")
-    no-repeat; /* Add your calendar icon */
-  background-position: center right; /* Adjust icon position */
-  background-size: 20px;
-  padding-right: 30px;
-  background-color: white;
-  margin-left: 3rem;
-  min-width: 250px;
-  border: 1px solid lightgrey;
-  padding-top: 13px;
-  color: #3951b2;
-}
 .input1 {
   display: flex;
 }
+
 .label-float {
   position: relative;
   padding-top: 13px;
@@ -125,21 +105,18 @@ input[type="date"] {
 .label-float input:required:invalid + label {
   color: #3951b2;
 }
+
 .label-float input:focus:required:invalid {
   border: 2px solid #3951b2;
 }
+
 .label-float input:focus + label,
 .label-float input:not(:placeholder-shown) + label {
   font-size: 13px;
   top: 0;
   color: red;
 }
-/* .button {
-  align-items: center;
-  justify-content: center;
-  margin-left: 46%;
-  margin-top: 3rem;
-} */
+
 button {
   align-items: center;
   justify-content: center;
@@ -157,10 +134,12 @@ button {
   transition: 800ms ease all;
   outline: none;
 }
+
 button:hover {
   background: #fff;
   color: rgba(0, 212, 255, 1);
 }
+
 button:before,
 button:after {
   content: "";
@@ -172,14 +151,67 @@ button:after {
   background: rgba(0, 212, 255, 1);
   transition: 400ms ease all;
 }
+
 button:after {
   right: inherit;
   top: inherit;
   left: 0;
   bottom: 0;
 }
+
 button:hover:before,
 button:hover:after {
   width: 100%;
   transition: 800ms ease all;
+}
+
+.display-tasks ul {
+  list-style: none; /* Remove default list styles */
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap onto the next line */
+  gap: 5px;
+  align-items: center; /* Align items in the center horizontally */
+  justify-content: center; /* Center content horizontally */
+  max-width: calc(100% - 10px); /* Adjust maximum width of the list */
+}
+
+.display-tasks ul li {
+  display: flex;
+  align-items: center; /* Align content in each task vertically */
+  padding: 10px;
+  background-color: rgb(123, 91, 91);
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex: 1 0 19%; /* Set width for five items in one line */
+  max-width: calc(19% - 10px); /* Adjust maximum width of each item */
+  text-align: center;
+}
+
+
+.he {
+  text-align: center;
+  margin: 5rem;
+}
+
+.display-tasks
+{
+  color: #bbb;
+  display: block;
+  background-color: white;
+ 
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 3.2rem;
+  align-items: center;
+ 
+  height: 20rem;
+  width: 70rem;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5rem;
+  background-color: rgb(237, 221, 221);
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px 10px rgba(6, 72, 240, 0.19);
 }

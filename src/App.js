@@ -5,13 +5,39 @@ const item = [
   {
     id: 1,
     description: "Book a Train Ticket",
-    date: "22/12/2023"
+    date: "22/12/2023",
   },
   {
     id: 2,
     description: "Book a bus Ticket",
-    date: "22/12/2023"
+    date: "22/12/2023",
   },
+  {
+    id: 2,
+    description: "Book a bus Ticket",
+    date: "22/12/2023",
+  },
+  {
+    id: 2,
+    description: "Book a bus Ticket",
+    date: "22/12/2023",
+  },
+  {
+    id: 2,
+    description: "Book a bus Ticket",
+    date: "22/12/2023",
+  },
+  {
+    id: 2,
+    description: "Book a bus Ticket",
+    date: "22/12/2023",
+  },{
+    id: 2,
+    description: "Book a bus Ticket",
+    date: "22/12/2023",
+  },
+  
+  
 ];
 
 export default function App() {
@@ -90,15 +116,17 @@ function Main({ description, setDescription, date, setDate, addTask }) {
 
 function Display({ tasks }) {
   return (
-    <div className="display-tasks">
-      <h2>Tasks:</h2>
-      <ul>
-        {tasks.map((task) => (
-          <li key={task.id}>
-            {task.description} - {task.date}
-          </li>
-        ))}
-      </ul>
+    <div>
+      <h2 className="he">Tasks:</h2>
+      <div className="display-tasks">
+        <ul>
+          {tasks.map((task) => (
+            <li key={task.id}>
+              {task.description} - {task.date}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
