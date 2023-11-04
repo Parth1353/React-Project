@@ -166,7 +166,7 @@ button:hover:after {
 }
 
 .display-tasks ul {
-  list-style: none; 
+  list-style: none;  
   padding: 0;
   display: flex;
   flex-wrap: wrap; 
